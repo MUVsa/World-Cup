@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yalla 26 Interactive Event Map</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="creative-bg" aria-hidden="true">
+      <div class="brand-film"></div>
+      <div class="stadium-lines"></div>
+      <div class="confetti-lane lane-one"></div>
+      <div class="confetti-lane lane-two"></div>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar" aria-label="Event header">
+        <div class="brand-lockup">
+          <img src="assets/riyadh-logo.png" alt="Riyadh Region Municipality" class="logo logo-riyadh" />
+          <span class="divider" aria-hidden="true"></span>
+          <img src="assets/yalla-logo.png" alt="Yalla 26" class="logo logo-yalla" />
+        </div>
+        <div class="event-title">
+          <p>Yalla 26</p>
+          <h1>خريطة الفعالية التفاعلية</h1>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <section class="map-panel" aria-label="Interactive floor plan">
+          <div class="map-frame" id="mapFrame">
+            <div class="map-canvas" id="mapCanvas">
+              <img src="assets/floor-plan.png" alt="Floor plan with numbered event elements" class="floor-plan" />
+              <div class="hotspot-layer" id="hotspotLayer" aria-label="Numbered render points"></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="directory" aria-label="Event render directory">
+          <div class="directory-head">
+            <span>العناصر</span>
+            <strong id="totalCount">19</strong>
+          </div>
+          <div class="directory-list" id="directoryList"></div>
+        </aside>
+      </main>
+    </div>
+
+    <div class="modal" id="renderModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-backdrop" data-close></div>
+      <section class="modal-panel">
+        <button class="icon-btn close-btn" type="button" data-close aria-label="Close render viewer" title="Close">×</button>
+        <div class="modal-copy">
+          <span class="modal-number" id="modalNumber"></span>
+          <div>
+            <h2 id="modalTitle"></h2>
+            <p id="modalSubtitle"></p>
+          </div>
+        </div>
+
+        <div class="viewer">
+          <button class="nav-btn prev-btn" type="button" id="prevBtn" aria-label="Previous render" title="Previous">‹</button>
+          <figure class="render-stage">
+            <img id="renderImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" alt="" />
+            <figcaption>
+              <span id="imageCaption"></span>
+              <span id="imageCounter"></span>
+            </figcaption>
+          </figure>
+          <button class="nav-btn next-btn" type="button" id="nextBtn" aria-label="Next render" title="Next">›</button>
+        </div>
+
+        <div class="thumb-strip" id="thumbStrip" aria-label="Render thumbnails"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
